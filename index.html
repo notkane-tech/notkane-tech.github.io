@@ -20,17 +20,35 @@
     </header>
 
     <section id="projects" class="projects-container">
-        <div class="project-card" onclick="expandCard(this)">
-            <h2>Project 1</h2>
-            <p>Click to view details</p>
+        <div class="project-card" onclick="flipCard(this)">
+            <div class="card-front">
+                <h2>Project 1</h2>
+                <p>Click to view details</p>
+            </div>
+            <div class="card-back">
+                <h2>Project 1 Details</h2>
+                <p>Here are more details about this project. <a href="#">Learn more</a></p>
+            </div>
         </div>
-        <div class="project-card" onclick="expandCard(this)">
-            <h2>Project 2</h2>
-            <p>Click to view details</p>
+        <div class="project-card" onclick="flipCard(this)">
+            <div class="card-front">
+                <h2>Project 2</h2>
+                <p>Click to view details</p>
+            </div>
+            <div class="card-back">
+                <h2>Project 2 Details</h2>
+                <p>Here are more details about this project. <a href="#">Learn more</a></p>
+            </div>
         </div>
-        <div class="project-card" onclick="expandCard(this)">
-            <h2>Project 3</h2>
-            <p>Click to view details</p>
+        <div class="project-card" onclick="flipCard(this)">
+            <div class="card-front">
+                <h2>Project 3</h2>
+                <p>Click to view details</p>
+            </div>
+            <div class="card-back">
+                <h2>Project 3 Details</h2>
+                <p>Here are more details about this project. <a href="#">Learn more</a></p>
+            </div>
         </div>
     </section>
 
@@ -39,20 +57,20 @@
     </footer>
 
     <script>
-        function expandCard(card) {
-            if (card.classList.contains('expanded')) {
-                card.classList.remove('expanded');
-            } else {
-                document.querySelectorAll('.project-card').forEach(c => c.classList.remove('expanded'));
-                card.classList.add('expanded');
-            }
+        function flipCard(card) {
+            card.classList.toggle('flipped');
         }
 
-        // Floating effect for the cards
         document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.projects-container');
             const cards = document.querySelectorAll('.project-card');
+            const containerWidth = container.offsetWidth;
+            const containerHeight = container.offsetHeight;
+
             cards.forEach(card => {
-                card.style.transform = `translate(${Math.random() * 50 - 25}px, ${Math.random() * 50 - 25}px)`;
+                const randomX = Math.random() * (containerWidth - 200);
+                const randomY = Math.random() * (containerHeight - 200);
+                card.style.transform = `translate(${randomX}px, ${randomY}px)`;
             });
         });
     </script>
