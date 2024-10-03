@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kane's Tech Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Tech Portfolio</h1>
+        <p>By Kane</p>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="projects" class="projects-container">
+        <div class="project-card" onclick="expandCard(this)">
+            <h2>Project 1</h2>
+            <p>Click to view details</p>
+        </div>
+        <div class="project-card" onclick="expandCard(this)">
+            <h2>Project 2</h2>
+            <p>Click to view details</p>
+        </div>
+        <div class="project-card" onclick="expandCard(this)">
+            <h2>Project 3</h2>
+            <p>Click to view details</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Kane's Tech Portfolio</p>
+    </footer>
+
+    <script>
+        function expandCard(card) {
+            if (card.classList.contains('expanded')) {
+                card.classList.remove('expanded');
+            } else {
+                document.querySelectorAll('.project-card').forEach(c => c.classList.remove('expanded'));
+                card.classList.add('expanded');
+            }
+        }
+    </script>
+</body>
+</html>
