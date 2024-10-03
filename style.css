@@ -1,19 +1,21 @@
-/* General styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f0e6; /* Softer off-white tone */
-    color: #333;
+/* Ensure the full screen is covered with background color */
+html, body {
+    height: 100%; /* Ensure the body and html elements cover the full height */
     margin: 0;
     padding: 0;
+    background-color: #f4f0e6; /* Softer off-white tone for the entire page */
+    color: #333;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Header */
+/* Header at the top */
 header {
     background-color: #e0dbc5; /* Soft natural tone */
     padding: 20px;
     width: 100%;
     text-align: center;
-    position: fixed; /* Fix the header at the top */
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -21,19 +23,22 @@ header {
 }
 
 main {
-    margin-top: 120px; /* Add top margin to prevent content overlap with header */
+    margin-top: 120px; /* Space under the header */
+    flex-grow: 1; /* Allow the content to grow and fill the space */
 }
 
-/* Navigation styles remain the same */
+/* Navigation styles */
 nav ul {
     list-style-type: none;
-    margin: 20px 0 0 0;
+    margin: 20px 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 nav ul li {
     display: inline-block;
-    margin: 0 15px;
 }
 
 nav ul li a {
@@ -41,47 +46,35 @@ nav ul li a {
     color: #444;
     font-weight: bold;
     position: relative;
-    padding: 5px 0;
 }
 
-nav ul li a:hover::before,
-nav ul li a::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0%;
-    height: 2px;
-    background-color: #444;
-    transition: width 0.3s ease;
+nav ul li a:hover {
+    color: #666;
 }
 
-nav ul li a:hover::before {
-    width: 100%;
-}
-
-/* Projects section */
+/* Projects container */
 .projects-container {
-    position: relative; /* Necessary for absolutely positioned children */
-    width: 100%;
-    height: 600px; /* Set a height for the container */
-    overflow: hidden; /* Hide overflow of moving cards */
-    background-color: #f4f0e6; /* Match body background */
-    perspective: 1000px; /* Enable 3D perspective for flip effect */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 50px;
+    gap: 20px;
+    perspective: 1000px; /* 3D flip effect */
+    background-color: #f4f0e6; /* Consistent background with body */
+    min-height: 100vh; /* Fill the viewport height */
 }
 
-/* Project cards */
+/* Project card */
 .project-card {
-    position: absolute; /* Allows positioning within container */
     width: 150px;
     height: 150px;
     background-color: #faf9f6;
     border: 1px solid #e0dbc5;
     border-radius: 10px;
+    position: relative;
     cursor: pointer;
     transform-style: preserve-3d;
     transition: transform 0.8s ease;
-    animation: float 6s ease-in-out infinite;
 }
 
 .project-card:hover {
@@ -89,44 +82,22 @@ nav ul li a:hover::before {
 }
 
 .project-card.flipped {
-    transform: rotateY(180deg) scale(1.2); /* Flip and slightly enlarge */
-    z-index: 1000;
+    transform: rotateY(180deg);
 }
 
-/* Card faces */
 .card-front, .card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Hide the back when not visible */
+    backface-visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
 }
 
 .card-back {
     transform: rotateY(180deg);
-    background-color: #fff; /* Differentiate the back */
-}
-
-/* Floating animation */
-@keyframes float {
-    0% {
-        transform: translate(0, 0);
-    }
-    25% {
-        transform: translate(-10px, -10px);
-    }
-    50% {
-        transform: translate(0, -20px);
-    }
-    75% {
-        transform: translate(10px, -10px);
-    }
-    100% {
-        transform: translate(0, 0);
-    }
+    background-color: #fff;
 }
 
 /* Footer */
@@ -137,5 +108,4 @@ footer {
     padding: 10px;
     position: relative;
     bottom: 0;
-    margin-top: 20px;
 }
