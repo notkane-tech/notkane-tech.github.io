@@ -47,6 +47,14 @@
                 card.classList.add('expanded');
             }
         }
+
+        // Floating effect for the cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                card.style.transform = `translate(${Math.random() * 50 - 25}px, ${Math.random() * 50 - 25}px)`;
+            });
+        });
     </script>
 </body>
 </html>
