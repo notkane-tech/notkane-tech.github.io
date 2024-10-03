@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kane's Tech Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,38 +18,20 @@
         </nav>
     </header>
 
-    <section id="projects" class="projects-container">
-        <div class="project-card" onclick="flipCard(this)">
-            <div class="card-front">
-                <h2>Project 1</h2>
-                <p>Click to view details</p>
+    <main>
+        <section id="projects" class="projects-container">
+            <div class="project-card" onclick="flipCard(this)">
+                <div class="card-front">
+                    <h2>Project 1</h2>
+                </div>
+                <div class="card-back">
+                    <h2>Project 1 Details</h2>
+                    <p>Details about Project 1. <a href="#">Learn more</a></p>
+                </div>
             </div>
-            <div class="card-back">
-                <h2>Project 1 Details</h2>
-                <p>Here are more details about this project. <a href="#">Learn more</a></p>
-            </div>
-        </div>
-        <div class="project-card" onclick="flipCard(this)">
-            <div class="card-front">
-                <h2>Project 2</h2>
-                <p>Click to view details</p>
-            </div>
-            <div class="card-back">
-                <h2>Project 2 Details</h2>
-                <p>Here are more details about this project. <a href="#">Learn more</a></p>
-            </div>
-        </div>
-        <div class="project-card" onclick="flipCard(this)">
-            <div class="card-front">
-                <h2>Project 3</h2>
-                <p>Click to view details</p>
-            </div>
-            <div class="card-back">
-                <h2>Project 3 Details</h2>
-                <p>Here are more details about this project. <a href="#">Learn more</a></p>
-            </div>
-        </div>
-    </section>
+            <!-- Repeat for other project cards -->
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2024 Kane's Tech Portfolio</p>
@@ -68,9 +49,15 @@
             const containerHeight = container.offsetHeight;
 
             cards.forEach(card => {
-                const randomX = Math.random() * (containerWidth - 200);
-                const randomY = Math.random() * (containerHeight - 200);
-                card.style.transform = `translate(${randomX}px, ${randomY}px)`;
+                const cardWidth = card.offsetWidth;
+                const cardHeight = card.offsetHeight;
+                const maxX = containerWidth - cardWidth;
+                const maxY = containerHeight - cardHeight;
+                const randomX = Math.random() * maxX;
+                const randomY = Math.random() * maxY;
+
+                card.style.left = `${randomX}px`;
+                card.style.top = `${randomY}px`;
             });
         });
     </script>
