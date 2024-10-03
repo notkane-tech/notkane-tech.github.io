@@ -1,40 +1,40 @@
-/* Ensure the full screen is covered with background color */
-html, body {
-    height: 100%; /* Ensure the body and html elements cover the full height */
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f0e6; /* Softer off-white tone for the entire page */
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #f5eadf; /* Ecru tones */
     color: #333;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Header at the top */
-header {
-    background-color: #e0dbc5; /* Soft natural tone */
     padding: 20px;
-    width: 100%;
+}
+
+/* Header Styling */
+header {
     text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
 }
 
-main {
-    margin-top: 120px; /* Space under the header */
-    flex-grow: 1; /* Allow the content to grow and fill the space */
+header h1 {
+    font-size: 3rem;
+    color: #333;
 }
 
-/* Navigation styles */
+header h2 {
+    font-size: 1rem;
+    color: #555;
+}
+
 nav ul {
     list-style-type: none;
-    margin: 20px 0;
-    padding: 0;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 nav ul li {
@@ -43,69 +43,97 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #444;
-    font-weight: bold;
+    color: #333;
+    padding: 10px 20px;
     position: relative;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #666;
+    color: #555;
 }
 
-/* Projects container */
-.projects-container {
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    border: 2px solid #333;
+    top: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+}
+
+/* Project Card Styling */
+.project-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    padding: 20px;
+    width: 150px;
+    height: 100px;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    padding: 50px;
-    gap: 20px;
-    perspective: 1000px; /* 3D flip effect */
-    background-color: #f4f0e6; /* Consistent background with body */
-    min-height: 100vh; /* Fill the viewport height */
-}
-
-/* Project card */
-.project-card {
-    width: 150px;
-    height: 150px;
-    background-color: #faf9f6;
-    border: 1px solid #e0dbc5;
-    border-radius: 10px;
-    position: relative;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    transform-style: preserve-3d;
-    transition: transform 0.8s ease;
 }
 
 .project-card:hover {
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.project-card.flipped {
-    transform: rotateY(180deg);
-}
-
-.card-front, .card-back {
-    position: absolute;
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
-    display: flex;
+    background-color: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
 }
 
-.card-back {
-    transform: rotateY(180deg);
+.modal-content {
     background-color: #fff;
-}
-
-/* Footer */
-footer {
-    background-color: #e0dbc5;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
     width: 100%;
     text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Project Link Styling */
+.project-link {
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #333;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.project-link:hover {
+    background-color: #f5eadf;
 }
