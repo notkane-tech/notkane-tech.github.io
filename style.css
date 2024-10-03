@@ -1,13 +1,15 @@
 /* General styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f0e6; /* Softer off-white tone */
+    background-color: #f4f0e6; /* Softer off-white tone matching the entire screen */
     color: #333;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh; /* Ensure full screen is covered */
+    justify-content: center; /* Center content vertically */
 }
 
 header {
@@ -71,18 +73,17 @@ nav ul li a:hover::before {
 .projects-container {
     display: flex;
     justify-content: space-around;
-    padding: 50px;
     flex-wrap: wrap;
-    position: relative;
-    height: 500px; /* Set a height for the container */
-    width: 100%; /* Set a width for the container */
+    padding: 50px;
+    gap: 20px;
+    background-color: #f4f0e6; /* Same background as body */
+    perspective: 1000px; /* Enable 3D perspective */
+    width: 100%; /* Ensure it spans the full width */
 }
 
 .project-card {
     background-color: #faf9f6;
     border: 1px solid #e0dbc5;
-    padding: 20px;
-    margin: 10px;
     width: 150px;
     height: 150px;
     text-align: center;
@@ -90,32 +91,18 @@ nav ul li a:hover::before {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.8s ease;
     transform-style: preserve-3d;
-    position: absolute; /* Allow cards to float freely */
-    animation: float 4s ease-in-out infinite;
     cursor: pointer;
-}
-
-.project-card.flipped {
-    transform: rotateY(180deg) scale(2); /* Flip and enlarge the card */
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
+    position: relative;
 }
 
 .project-card:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Card front and back */
+.project-card.flipped {
+    transform: rotateY(180deg) scale(1.5); /* Flip and enlarge */
+}
+
 .card-front, .card-back {
     position: absolute;
     width: 100%;
@@ -128,14 +115,14 @@ nav ul li a:hover::before {
 }
 
 .card-back {
-    transform: rotateY(180deg); /* Back face is hidden initially */
+    transform: rotateY(180deg);
 }
 
 .project-card.flipped .card-back {
     display: block;
 }
 
-/* Expanded card styling */
+/* Footer */
 footer {
     background-color: #e0dbc5;
     width: 100%;
