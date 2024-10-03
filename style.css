@@ -1,44 +1,38 @@
 /* General styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f0e6; /* Softer off-white tone matching the entire screen */
+    background-color: #f4f0e6; /* Softer off-white tone */
     color: #333;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh; /* Ensure full screen is covered */
-    justify-content: center; /* Center content vertically */
 }
 
+/* Header */
 header {
     background-color: #e0dbc5; /* Soft natural tone */
     padding: 20px;
     width: 100%;
     text-align: center;
+    position: fixed; /* Fix the header at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    margin: 0;
-    color: #444;
-    font-size: 36px;
+main {
+    margin-top: 120px; /* Add top margin to prevent content overlap with header */
 }
 
-p {
-    color: #888;
-    margin-top: 5px;
-}
-
+/* Navigation styles remain the same */
 nav ul {
     list-style-type: none;
-    margin: 20px 0;
+    margin: 20px 0 0 0;
     padding: 0;
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
     margin: 0 15px;
 }
 
@@ -47,52 +41,47 @@ nav ul li a {
     color: #444;
     font-weight: bold;
     position: relative;
+    padding: 5px 0;
 }
 
-nav ul li a:hover {
-    color: #666;
-}
-
+nav ul li a:hover::before,
 nav ul li a::before {
     content: '';
     position: absolute;
     left: 0;
     bottom: -5px;
-    width: 100%;
+    width: 0%;
     height: 2px;
     background-color: #444;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
+    transition: width 0.3s ease;
 }
 
 nav ul li a:hover::before {
-    transform: scaleX(1);
+    width: 100%;
 }
 
 /* Projects section */
 .projects-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 50px;
-    gap: 20px;
-    background-color: #f4f0e6; /* Same background as body */
-    perspective: 1000px; /* Enable 3D perspective */
-    width: 100%; /* Ensure it spans the full width */
+    position: relative; /* Necessary for absolutely positioned children */
+    width: 100%;
+    height: 600px; /* Set a height for the container */
+    overflow: hidden; /* Hide overflow of moving cards */
+    background-color: #f4f0e6; /* Match body background */
+    perspective: 1000px; /* Enable 3D perspective for flip effect */
 }
 
+/* Project cards */
 .project-card {
-    background-color: #faf9f6;
-    border: 1px solid #e0dbc5;
+    position: absolute; /* Allows positioning within container */
     width: 150px;
     height: 150px;
-    text-align: center;
+    background-color: #faf9f6;
+    border: 1px solid #e0dbc5;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.8s ease;
-    transform-style: preserve-3d;
     cursor: pointer;
-    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+    animation: float 6s ease-in-out infinite;
 }
 
 .project-card:hover {
@@ -100,26 +89,44 @@ nav ul li a:hover::before {
 }
 
 .project-card.flipped {
-    transform: rotateY(180deg) scale(1.5); /* Flip and enlarge */
+    transform: rotateY(180deg) scale(1.2); /* Flip and slightly enlarge */
+    z-index: 1000;
 }
 
+/* Card faces */
 .card-front, .card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
+    backface-visibility: hidden; /* Hide the back when not visible */
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
 }
 
 .card-back {
     transform: rotateY(180deg);
+    background-color: #fff; /* Differentiate the back */
 }
 
-.project-card.flipped .card-back {
-    display: block;
+/* Floating animation */
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(-10px, -10px);
+    }
+    50% {
+        transform: translate(0, -20px);
+    }
+    75% {
+        transform: translate(10px, -10px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
 }
 
 /* Footer */
@@ -128,6 +135,7 @@ footer {
     width: 100%;
     text-align: center;
     padding: 10px;
-    position: fixed;
+    position: relative;
     bottom: 0;
+    margin-top: 20px;
 }
