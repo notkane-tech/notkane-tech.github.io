@@ -21,24 +21,10 @@
     </header>
 
     <main>
-        <form action="https://formspree.io/f/xwpkekrr" method="POST">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required>
-        
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" required>
-        
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-        
-            <input type="text" name="_gotcha" style="display:none"> <!-- Anti-spam -->
-        
-            <button type="submit">Send Message</button>
-        </form>
-        
         <section class="contact-form">
             <h3>Get in Touch</h3>
-            <form id="contactForm" action="#" method="POST">
+            <!-- Corrected form with only one email field -->
+            <form action="https://formspree.io/f/xwpkekrr" method="POST">
                 <label for="name">Your Name</label>
                 <input type="text" id="name" name="name" required>
 
@@ -47,6 +33,8 @@
 
                 <label for="message">Your Message</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
+
+                <input type="text" name="_gotcha" style="display:none"> <!-- Anti-spam -->
 
                 <button type="submit">Send Message</button>
             </form>
