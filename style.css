@@ -73,15 +73,15 @@ nav ul li a:hover::before {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px; /* Reduced gap */
 }
 
 .project-card {
     background-color: #ffffff;
     border: 2px solid #ccc;
     padding: 20px;
-    width: 150px;
-    height: 100px;
+    width: 200px; /* Increased width */
+    height: 300px; /* Increased height to make more portrait */
     display: flex;
     justify-content: center;
     align-items: center;
