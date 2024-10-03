@@ -2,56 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kane's Tech Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tech Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>My Tech Portfolio</h1>
-        <p>By Kane</p>
+        <h2>By Kane</h2>
         <nav>
             <ul>
                 <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#projects">Projects</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="projects" class="projects-container">
-        <!-- Project Card 1 -->
-        <div class="project-card" onclick="flipCard(this)">
-            <div class="card-front">
-                <h2>Project 1</h2>
-                <p>Click to view details</p>
-            </div>
-            <div class="card-back">
-                <h2>Project 1 Details</h2>
-                <p>Details about Project 1. <a href="#">Learn more</a></p>
-            </div>
+    <section id="projects" class="project-gallery">
+        <div class="project-card" onclick="expandCard(this)">
+            <h3>Project 1</h3>
         </div>
-        <!-- Project Card 2 -->
-        <div class="project-card" onclick="flipCard(this)">
-            <div class="card-front">
-                <h2>Project 2</h2>
-                <p>Click to view details</p>
-            </div>
-            <div class="card-back">
-                <h2>Project 2 Details</h2>
-                <p>Details about Project 2. <a href="#">Learn more</a></p>
-            </div>
+        <div class="project-card" onclick="expandCard(this)">
+            <h3>Project 2</h3>
         </div>
-        <!-- Add more cards as needed -->
+        <div class="project-card" onclick="expandCard(this)">
+            <h3>Project 3</h3>
+        </div>
+        <!-- Add more project cards as needed -->
     </section>
 
-    <footer>
-        <p>&copy; 2024 Kane's Tech Portfolio</p>
-    </footer>
+    <div id="expanded-project" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCard()">&times;</span>
+            <h3>Project Title</h3>
+            <p>Details about the project...</p>
+            <a href="#" class="project-link">More about this project</a>
+        </div>
+    </div>
 
-    <script>
-        function flipCard(card) {
-            card.classList.toggle('flipped');
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
