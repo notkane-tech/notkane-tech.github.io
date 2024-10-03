@@ -1,7 +1,7 @@
 /* General styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f7f3e9; /* Ecru/off-white tone */
+    background-color: #f4f0e6; /* Softer off-white tone */
     color: #333;
     margin: 0;
     padding: 0;
@@ -11,19 +11,21 @@ body {
 }
 
 header {
-    background-color: #d9d2ba; /* Natural tone */
+    background-color: #e0dbc5; /* Soft natural tone */
     padding: 20px;
     width: 100%;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     margin: 0;
-    color: #333;
+    color: #444;
+    font-size: 36px;
 }
 
 p {
-    color: #666;
+    color: #888;
     margin-top: 5px;
 }
 
@@ -40,7 +42,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #444;
     font-weight: bold;
     position: relative;
 }
@@ -56,7 +58,7 @@ nav ul li a::before {
     bottom: -5px;
     width: 100%;
     height: 2px;
-    background-color: #666;
+    background-color: #444;
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -71,11 +73,12 @@ nav ul li a:hover::before {
     justify-content: space-around;
     padding: 50px;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .project-card {
-    background-color: #fff;
-    border: 1px solid #d9d2ba;
+    background-color: #faf9f6;
+    border: 1px solid #e0dbc5;
     padding: 20px;
     margin: 10px;
     width: 150px;
@@ -84,20 +87,25 @@ nav ul li a:hover::before {
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: float 4s ease-in-out infinite;
+    position: absolute;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.05);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-footer {
-    background-color: #d9d2ba;
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
 }
 
 /* Expanded card styling */
@@ -123,4 +131,13 @@ footer {
 .project-card.expanded p {
     font-size: 16px;
     color: #666;
+}
+
+footer {
+    background-color: #e0dbc5;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
 }
