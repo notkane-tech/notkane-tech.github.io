@@ -8,8 +8,8 @@
 
 /* Body Styling */
 body {
-    background-color: #89ABE3FF; /* Same blue background */
-    color: #FCF6F5FF; /* Same off-white text */
+    background-color: #89ABE3FF;
+    color: #FCF6F5FF; 
     padding: 20px;
     line-height: 1.6;
 }
@@ -75,8 +75,8 @@ nav ul li a:hover::before {
 
 /* About Section Styling */
 .about-me {
-    background-color: #FCF6F5FF; /* White background for content sections */
-    color: #2c3e50; /* Dark text for readability */
+    background-color: #FCF6F5FF; 
+    color: #2c3e50;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 30px;
@@ -99,7 +99,7 @@ footer {
     color: #FCF6F5FF;
     padding: 20px;
     font-size: 1rem;
-    background-color: ##89ABE3FF; /* Dark background for the footer */
+    background-color: ##89ABE3FF;
     width: 100%;
 }
 

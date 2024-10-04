@@ -1,5 +1,5 @@
 document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting the default way
+    event.preventDefault(); 
 
     const formData = {
         name: document.getElementById('name').value,
@@ -7,7 +7,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         message: document.getElementById('message').value
     };
 
-    // Example of using an API to send the data
+    
     fetch('https://your-api-endpoint.com/contact', {
         method: 'POST',
         headers: {
