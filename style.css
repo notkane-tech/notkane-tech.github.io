@@ -78,7 +78,7 @@ nav ul li a:hover::before {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 20px;
 }
 
 .project-card {
