@@ -24,7 +24,7 @@ function flipCard(card) {
 
 
 function createTranslucentClouds() {
-    for (let i = 0; i < 5; i++) { // Create 5 clouds (adjust number as needed)
+    for (let i = 0; i < 8; i++) { // Create 5 clouds (adjust number as needed)
         let cloud = document.createElement('div');
         cloud.classList.add('cloud');
         cloud.style.top = Math.random() * window.innerHeight + 'px'; // Random vertical position
