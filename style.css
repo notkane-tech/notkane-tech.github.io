@@ -213,6 +213,7 @@ body {
     background-color: #89ABE3FF;
     color: #FCF6F5FF;
     position: relative;
+    overflow-y: scroll;
 /* Hide clouds when they float off-screen */
 }
 
