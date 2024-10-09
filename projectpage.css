@@ -125,3 +125,52 @@ footer {
 footer p {
     margin: 0;
 }
+
+/*DELETE FROM HERE Background styling for floating translucent clouds */
+body {
+    background-color: #89ABE3FF;
+    color: #FCF6F5FF;
+    position: relative;
+    overflow: hidden; /* Hide clouds when they float off-screen */
+}
+
+/* Cloud styling */
+.cloud {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6); /* Translucent cloud color */
+    width: 120px; /* Cloud size */
+    height: 70px;
+    border-radius: 50px;
+    animation: floatClouds 20s linear infinite; /* Infinite animation */
+    z-index: -1; /* Clouds behind content */
+    opacity: 0.5; /* Translucency */
+}
+
+.cloud:before, .cloud:after {
+    content: '';
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6); /* Translucent cloud color */
+    width: 120px;
+    height: 70px;
+    border-radius: 50px;
+}
+
+.cloud:before {
+    top: -35px;
+    left: 20px;
+}
+
+.cloud:after {
+    top: -20px;
+    left: -40px;
+}
+
+/* Animation for floating clouds */
+@keyframes floatClouds {
+    0% {
+        left: -150px; /* Start off-screen on the left */
+    }
+    100% {
+        left: 100vw; /* Move across the viewport */
+    }
+}
