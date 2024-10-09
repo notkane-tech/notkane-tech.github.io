@@ -253,6 +253,6 @@ body {
         left: -150px; /* Start off-screen on the left */
     }
     100% {
-        left: 150vw; /* Move across the viewport */
+        left: 100vw; /* Move across the viewport */
     }
 }
