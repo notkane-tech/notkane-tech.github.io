@@ -131,7 +131,7 @@ body {
     background-color: #89ABE3FF;
     color: #FCF6F5FF;
     position: relative;
-    overflow: hidden; /* Hide clouds when they float off-screen */
+ /* Hide clouds when they float off-screen */
 }
 
 /* Cloud styling */
