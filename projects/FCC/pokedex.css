@@ -1,1 +1,143 @@
-
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f3f3;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #ffcb05; /* Pokémon Yellow */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Container for the entire pokedex app */
+  #pokedex-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    overflow: hidden;
+  }
+  
+  /* Styling the search box */
+  #search {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  #search-input {
+    padding: 10px;
+    border: 2px solid #0075be; /* Pokémon Blue */
+    border-radius: 8px;
+    width: 70%;
+    font-size: 1rem;
+    margin-right: 10px;
+  }
+  
+  #search-button {
+    padding: 10px 20px;
+    background-color: #ffcb05;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #2a75bb;
+  }
+  
+  #search-button:hover {
+    background-color: #ffdf70;
+  }
+  
+  /* Styling the pokemon info display */
+  #pokemon-info {
+    background-color: #e2e2e2;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 20px;
+  }
+  
+  #pokemon-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  #pokemon-id {
+    font-size: 1.2rem;
+    color: #888;
+  }
+  
+  #pokemon-image img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  #types {
+    margin-top: 10px;
+  }
+  
+  #types span {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #ffcb05;
+    color: #2a75bb;
+    font-weight: bold;
+  }
+  
+  /* Table styles */
+  table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  
+  table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  th {
+    background-color: #0075be;
+    color: white;
+  }
+  
+  td {
+    background-color: #f9f9f9;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 600px) {
+    #search {
+      flex-direction: column;
+    }
+  
+    #search-input {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    #pokemon-image img {
+      width: 100px;
+      height: 100px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    #pokedex-container {
+      padding: 15px;
+    }
+  
+    table th, table td {
+      font-size: 0.9rem;
+    }
+  }
+  
