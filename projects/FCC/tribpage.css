@@ -1,0 +1,57 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    padding: 20px;
+}
+
+/* Title Styling */
+#title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Image Div Styling */
+#img-div {
+    max-width: 600px;
+    margin: 0 auto; /* Centers the div */
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+/* Image Styling */
+#image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centers the image */
+    border-radius: 5px;
+}
+
+/* Image Caption Styling */
+#img-caption {
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Tribute Info Styling */
+#tribute-info {
+    margin-top: 30px;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+/* Link Styling */
+#tribute-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: blue;
+    text-decoration: underline;
+}
